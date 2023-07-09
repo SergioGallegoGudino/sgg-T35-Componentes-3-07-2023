@@ -1,0 +1,18 @@
+<br>
+<table class="table">
+    <tr>
+    <th scope="col">Codigo</th>
+    <th scope="col">Descripcion</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Accion</th>
+    </tr>
+    <!-- Creamos un for que recorra la array añadiendo la información de cada objeto para cada fila -->
+    <tr *ngFor="let form of tabla">
+        <td>{{form.codigo}}</td>
+        <td>{{form.descripcion}}</td>
+        <td>{{form.precio}}</td>
+        <!-- Añadimos dos botones, uno para eliminar el objeto y otro para seleccionarlo y que aparezca su información en los inputs del formulario -->
+        <td><button (click)="borrar(form.codigo)" class="btn btn-danger">Borrar</button></td>
+        <td><button (click)="seleccionar(form)" class="btn btn-warning">Seleccionar</button></td>
+    </tr>
+</table>
